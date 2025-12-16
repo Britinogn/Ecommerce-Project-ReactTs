@@ -6,7 +6,17 @@ import { ProductGrid } from "./ProductsGrid";
 
 import "./HomePage.css";
 
-export function HomePage({cart , loadCart}) {
+type HomePageProps = {
+    cart: { 
+        productId: string; 
+        quantity: number; 
+        deliveryOptionId: string; 
+    }[]
+
+    loadCart: string;
+}
+
+export function HomePage({cart , loadCart}:HomePageProps) {
 
     const [products, setProducts ] = useState([])
 
